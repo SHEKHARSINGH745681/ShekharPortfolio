@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'aos/dist/aos.css';
+
+/* Global navbar height so components can align content below the fixed nav */
+:root {
+	--nav-height: 72px;
+}
+
+/* push page content down so the fixed navbar doesn't cover the hero/avatar */
+body {
+	margin: 0; /* remove default browser margin that can create white gaps */
+	padding-top: var(--nav-height);
+	/* default page background — keep dark so any gaps match the hero */
+	background-color: #0a0503;
+	color: #fff;
+}
+
+/* make in-page anchors land below the fixed nav */
+section {
+	scroll-margin-top: calc(var(--nav-height) + 16px);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

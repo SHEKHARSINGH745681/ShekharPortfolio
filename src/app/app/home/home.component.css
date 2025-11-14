@@ -1,0 +1,198 @@
+/* =========================
+   HERO SECTION (Noah-style)
+========================= */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 80px 60px;
+  min-height: 100vh;
+  position: relative;
+  overflow: visible;
+  background: radial-gradient(circle at top left, #1a0e06, #0e0804 60%),
+              linear-gradient(145deg, #2c1b10, #0a0503 75%);
+  background-blend-mode: overlay;
+  color: #fff;
+  scroll-snap-align: start;
+}
+
+/* Ambient Glow */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 25% 25%, rgba(255, 132, 56, 0.25), transparent 70%),
+              radial-gradient(circle at 80% 75%, rgba(243, 188, 7, 0.12), transparent 70%);
+  filter: blur(50px);
+  z-index: 0;
+}
+
+.hero * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+.content {
+  max-width: 550px;
+  flex: 1 1 480px;
+  margin-top: -25px; /* 👈 slightly moves content upward */
+}
+
+
+
+.hero h3 {
+  font-weight: 500;
+  color: #ff6b35;
+  font-size: 3.2rem;
+  margin-bottom: 10px;
+}
+
+.hero h3 span {
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 3.4rem;
+  margin: 15px 0;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.hero p {
+  color: #b8b8b8;
+  max-width: 500px;
+  margin-bottom: 35px;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-outline {
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #ff6b35, #ff9500);
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(255, 107, 53, 0.5);
+}
+
+.btn-outline {
+  border: 2px solid #ff6b35;
+  color: #ff6b35;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: #ff6b35;
+  color: #fff;
+}
+
+/* =========================
+   RIGHT SIDE (AVATAR ONLY)
+========================= */
+.hero-visual {
+  --avatar-size: 420px;
+  position: relative;
+  flex: 0 1 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Avatar */
+.avatar {
+  width: 1000px;
+  position: relative;
+  top: -40px; /* moves avatar upward */
+  animation: floatAvatar 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 40px rgba(255, 107, 53, 0.3));
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 2;
+}
+
+/* Floating avatar animation */
+@keyframes floatAvatar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (min-width: 1200px) {
+  .hero-visual {
+    --avatar-size: 550px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 80px 40px;
+  }
+
+  .hero-visual {
+    margin-top: 20px;
+    --avatar-size: 280px;
+  }
+
+  .avatar {
+    top: -20px;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 60px 25px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .hero-visual {
+    --avatar-size: 220px;
+  }
+
+  .avatar {
+    top: -10px;
+  }
+}

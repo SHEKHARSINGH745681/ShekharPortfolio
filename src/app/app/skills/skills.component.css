@@ -1,0 +1,20 @@
+.calendar-box {
+  margin: 40px auto 0;
+  max-width: 400px;
+  text-align: center;
+}
+
+.mat-date-range-input,
+.mat-date-range-picker {
+  color: #fff;
+}
+
+.mat-datepicker-content .mat-calendar-body-cell.mat-calendar-body-in-range {
+  background-color: #b8b8b8 !important; /* Light grey highlight like the photo */
+  border-radius: 0;
+}
+
+.mat-calendar-body-selected {
+  background-color: #000 !important;   /* Dark highlight for start & end */
+  color: #fff !important;
+}
