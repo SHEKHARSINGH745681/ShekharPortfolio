@@ -47,6 +47,13 @@ export class ProjectsComponent {
         'Field service management software (FSM) is a comprehensive solution designed to streamline and optimize the operational activities of field service organizations. It serves as a centralized platform for managing various tasks including tracking, reporting, work order management, dispatching, and scheduling. The field service management system facilitates that helps field technicians, dispatchers, and back-office staff work together smoothly, guaranteeing prompt and efficient service.',
       tech: 'Angular, .NET, Azure,SQL Server,Docker,Kubernetes,Microservices,Power BI',
     },
+     {
+      title: 'STA-VEHICLE INSPECTION SYSTEM',
+      image: 'assets/sta.png',
+      description:
+        'A comprehensive vehicle inspection system for STA to automate safety checks, manage inspection schedules, track vehicle compliance, and generate detailed reports for regulatory requirements.',
+      tech: 'Angular, .NET, Azure,SQL Server,Docker,Kubernetes,Microservices,Power BI',
+    },
   ];
 
   openProject(project: any) {
