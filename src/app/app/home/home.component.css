@@ -120,7 +120,7 @@
 .hero-visual {
   --avatar-size: 420px;
   position: relative;
-  flex: 0 1 420px;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,7 +128,8 @@
 
 /* Avatar */
 .avatar {
-  width: 1000px;
+  width: 900px;
+  max-width: 100%;
   position: relative;
   top: -40px; /* moves avatar upward */
   animation: floatAvatar 6s ease-in-out infinite;
