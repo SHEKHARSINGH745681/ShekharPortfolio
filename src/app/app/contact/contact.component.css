@@ -1,76 +1,73 @@
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px 80px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-  transition: background 0.3s ease;
+.contact {
+  padding: 100px 20px;
+  background: #0b0b0b;
+  color: #fff;
+  position: relative;
 }
 
-.logo {
-  font-size: 1.9rem;
+.contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, #ff6b35, #ff9500);
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 36px;
   font-weight: 700;
+  margin-bottom: 12px;
   color: #ff6b35;
 }
-.logo span {
-  color: white;
+
+.contact-subtitle {
+  color: #cfcfcf;
+  margin-bottom: 50px;
+  font-size: 16.5px;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 35px;
-  transition: 0.3s;
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
 }
 
-.nav-links a {
-  color: #ccc;
-  text-decoration: none;
+.contact-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 30px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.contact-label {
+  display: block;
+  font-size: 14px;
+  color: #9ca3af;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.contact-card a {
+  color: #ff9500;
+  font-size: 16.5px;
   font-weight: 500;
-  transition: color 0.3s;
-}
-.nav-links a:hover {
-  color: #ff6b35;
+  text-decoration: none;
 }
 
-/* Mobile Menu */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-}
-.menu-toggle .bar {
-  width: 25px;
-  height: 3px;
-  background: white;
-  border-radius: 3px;
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 80px;
-    right: 0;
-    background: rgba(20, 20, 20, 0.95);
-    flex-direction: column;
-    width: 200px;
-    text-align: right;
-    padding: 20px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-  }
-
-  .nav-links.active {
-    transform: translateX(0);
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
+.contact-card a:hover {
+  text-decoration: underline;
 }

@@ -1,4 +1,31 @@
 <section id="projects" class="projects" data-aos="fade-up">
   <h2>Projects</h2>
-  <p>Some of my featured works are coming soon...</p>
+  <p>Some of my featured works</p>
+
+  <div class="projects-grid">
+    <div
+      class="project-card"
+      *ngFor="let project of projects"
+      (click)="openProject(project)"
+    >
+      <img [src]="project.image" [alt]="project.title" />
+      <h3>{{ project.title }}</h3>
+    </div>
+  </div>
 </section>
+
+<!-- PROJECT MODAL -->
+<div class="project-modal" *ngIf="selectedProject" (click)="closeProject()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="closeProject()">×</button>
+
+    <img
+      [src]="selectedProject.image"
+      [alt]="selectedProject.title"
+    />
+
+    <h3>{{ selectedProject.title }}</h3>
+    <p>{{ selectedProject.description }}</p>
+    <span class="tech">{{ selectedProject.tech }}</span>
+  </div>
+</div>

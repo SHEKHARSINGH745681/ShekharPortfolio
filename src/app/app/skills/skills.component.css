@@ -1,20 +1,116 @@
-.calendar-box {
-  margin: 40px auto 0;
-  max-width: 400px;
+/* =========================
+   SKILLS SECTION BACKGROUND
+========================= */
+.skills {
+  padding: 90px 20px;
   text-align: center;
-}
-
-.mat-date-range-input,
-.mat-date-range-picker {
+  position: relative;
+  background: radial-gradient(circle at top left, #1a0e06, #0e0804 60%),
+              linear-gradient(145deg, #2c1b10, #0a0503 75%);
+  background-blend-mode: overlay;
   color: #fff;
+  overflow: hidden;
 }
 
+/* Ambient Glow Overlay */
+.skills::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 25% 25%, rgba(255, 132, 56, 0.2), transparent 70%),
+              radial-gradient(circle at 80% 75%, rgba(243, 188, 7, 0.1), transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Keep content above overlay */
+.skills * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Title */
+.skills h2 {
+  font-size: 34px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #ff9500;
+  text-shadow: 0 0 10px rgba(255, 149, 0, 0.6);
+}
+
+/* Description */
+.skills p {
+  max-width: 720px;
+  margin: 0 auto 50px;
+  color: #cfcfcf;
+  line-height: 1.6;
+}
+
+/* Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1150px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Skill Cards */
+.skill-card {
+  background: linear-gradient(145deg, #141414, #1c1c1c);
+  padding: 28px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.05), 0 10px 20px rgba(0, 0, 0, 0.7);
+  transition: all 0.4s ease;
+}
+
+/* Hover Glow Effect */
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 55px rgba(255, 149, 0, 0.45),
+              0 15px 25px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 149, 0, 0.35);
+}
+
+/* Card Title */
+.skill-card h3 {
+  font-size: 21px;
+  margin-bottom: 16px;
+  color: #ff9500;
+  text-shadow: 0 0 8px rgba(255, 149, 0, 0.5);
+}
+
+/* Skill List */
+.skill-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-card li {
+  padding: 7px 0;
+  color: #e0e0e0;
+  font-size: 15px;
+}
+
+/* Calendar Box */
+.calendar-box {
+  margin: 70px auto 0;
+  max-width: 420px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Material Date Range Styling */
 .mat-datepicker-content .mat-calendar-body-cell.mat-calendar-body-in-range {
-  background-color: #b8b8b8 !important; /* Light grey highlight like the photo */
-  border-radius: 0;
+  background-color: rgba(255, 149, 0, 0.45) !important;
 }
 
 .mat-calendar-body-selected {
-  background-color: #000 !important;   /* Dark highlight for start & end */
-  color: #fff !important;
+  background-color: #ff9500 !important;
+  color: #000 !important;
 }

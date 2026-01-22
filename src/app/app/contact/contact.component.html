@@ -1,4 +1,28 @@
 <section id="contact" class="contact" data-aos="fade-up">
-  <h2>Contact Me</h2>
-  <p>Let's collaborate! Reach out at <span>shekhar@example.com</span></p>
+  <div class="contact-container">
+    <h2>Contact Me</h2>
+    <p class="contact-subtitle">
+      Let’s connect and build something impactful together 🚀
+    </p>
+
+    <div class="contact-cards">
+      <!-- Phone -->
+      <div class="contact-card">
+        <span class="contact-label">Phone</span>
+        <a [href]="'tel:' + phone">{{ phone }}</a>
+      </div>
+
+      <!-- Email -->
+      <div class="contact-card">
+        <span class="contact-label">Email</span>
+        <a [href]="'mailto:' + email">{{ email }}</a>
+      </div>
+
+      <!-- LinkedIn -->
+      <div class="contact-card">
+        <span class="contact-label">LinkedIn</span>
+        <a [href]="linkedIn" target="_blank">View Profile</a>
+      </div>
+    </div>
+  </div>
 </section>

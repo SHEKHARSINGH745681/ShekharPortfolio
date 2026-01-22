@@ -1,21 +1,175 @@
+/* =========================
+   PROJECTS SECTION
+========================= */
 .projects {
-  padding: 100px 80px;
+  padding: 30px 60px;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at top left, #1a0e06, #0e0804 60%),
+              linear-gradient(145deg, #2c1b10, #0a0503 75%);
+  background-blend-mode: overlay;
+  color: #fff;
 }
 
+/* Ambient Glow Overlay */
+.projects::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 25% 25%, rgba(255, 132, 56, 0.2), transparent 70%),
+              radial-gradient(circle at 80% 75%, rgba(243, 188, 7, 0.1), transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Keep content above glow */
+.projects * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Title */
 .projects h2 {
-  color: #ff6b35;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  color: #ff9500;
+  font-size: 2.6rem;
+  margin-bottom: 12px;
+  text-shadow: 0 0 12px rgba(255, 149, 0, 0.6);
 }
 
+/* Description */
 .projects p {
   color: #aaa;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0 auto 60px;
   line-height: 1.6;
+}
+
+/* GRID */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* CARD */
+.project-card {
+  background: linear-gradient(145deg, #141414, #1c1c1c);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.05), 0 10px 20px rgba(0, 0, 0, 0.7);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 55px rgba(255, 149, 0, 0.45),
+              0 15px 35px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 149, 0, 0.35);
+}
+
+/* Image */
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Card Title */
+.project-card h3 {
+  padding: 18px;
+  font-size: 18px;
+  color: #ff9500;
+  text-shadow: 0 0 8px rgba(255, 149, 0, 0.5);
+}
+
+/* MODAL */
+.project-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Modal Content */
+.modal-content {
+  background: linear-gradient(145deg, #141414, #1c1c1c);
+  border-radius: 20px;
+  max-width: 720px;
+  width: 90%;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 149, 0, 0.25);
+  animation: scaleUp 0.35s ease;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(255, 149, 0, 0.15);
+}
+
+.modal-content h3 {
+  color: #ff9500;
+  margin-bottom: 12px;
+  text-shadow: 0 0 8px rgba(255, 149, 0, 0.5);
+}
+
+.modal-content p {
+  color: #cfcfcf;
+  line-height: 1.6;
+}
+
+.modal-content .tech {
+  display: inline-block;
+  margin-top: 15px;
+  color: #ff6b35;
+  font-size: 14px;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes scaleUp {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
